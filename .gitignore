@@ -1,0 +1,15 @@
+.qmake.stash
+Makefile
+*.o
+libv_repLua.1.0.0.dylib
+libv_repLua.1.0.dylib
+libv_repLua.1.dylib
+libv_repLua.dylib
+libv_repLua.so
+libv_repLua.so.1
+libv_repLua.so.1.0
+libv_repLua.so.1.0.0
+Makefile.Debug
+Makefile.Release
+debug/
+release/
