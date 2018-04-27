@@ -112,6 +112,11 @@ LUALIB_DLLEXPORT int luaLib_lua_toboolean(luaWrap_lua_State* L,int idx)
     return(lua_toboolean((lua_State*)L,idx));
 }
 
+LUALIB_DLLEXPORT const void* luaLib_lua_topointer(luaWrap_lua_State* L,int idx)
+{
+    return(lua_topointer((lua_State*)L,idx));
+}
+
 LUALIB_DLLEXPORT const char* luaLib_lua_tostring(luaWrap_lua_State* L,int idx)
 {
     return(lua_tostring((lua_State*)L,idx));

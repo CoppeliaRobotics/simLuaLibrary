@@ -36,6 +36,7 @@ LUALIB_DLLEXPORT void luaLib_lua_createtable(luaWrap_lua_State* L,int narr, int 
 LUALIB_DLLEXPORT int luaLib_lua_tointeger(luaWrap_lua_State* L,int idx);
 LUALIB_DLLEXPORT luaWrap_lua_Number luaLib_lua_tonumber(luaWrap_lua_State* L,int idx);
 LUALIB_DLLEXPORT int luaLib_lua_toboolean(luaWrap_lua_State* L,int idx);
+LUALIB_DLLEXPORT const void* luaLib_lua_topointer(luaWrap_lua_State* L,int idx);
 LUALIB_DLLEXPORT const char* luaLib_lua_tostring(luaWrap_lua_State* L,int idx);
 LUALIB_DLLEXPORT const char* luaLib_lua_tolstring(luaWrap_lua_State* L,int idx,size_t* len);
 LUALIB_DLLEXPORT int luaLib_lua_isnumber(luaWrap_lua_State* L,int idx);
