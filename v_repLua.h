@@ -17,6 +17,11 @@ typedef int (*luaWrap_lua_CFunction) (luaWrap_lua_State* L);
 
 LUALIB_DLLEXPORT int luaLibGet_LUA_MULTRET();
 LUALIB_DLLEXPORT int luaLibGet_LUA_MASKCOUNT();
+LUALIB_DLLEXPORT int luaLibGet_LUA_MASKCALL();
+LUALIB_DLLEXPORT int luaLibGet_LUA_MASKRET();
+LUALIB_DLLEXPORT int luaLibGet_LUA_HOOKCOUNT();
+LUALIB_DLLEXPORT int luaLibGet_LUA_HOOKCALL();
+LUALIB_DLLEXPORT int luaLibGet_LUA_HOOKRET();
 LUALIB_DLLEXPORT int luaLibGet_LUA_GLOBALSINDEX();
 LUALIB_DLLEXPORT luaWrap_lua_State* luaLib_luaL_newstate();
 LUALIB_DLLEXPORT void luaLib_lua_close(luaWrap_lua_State* L);

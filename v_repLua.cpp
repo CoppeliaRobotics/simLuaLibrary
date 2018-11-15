@@ -17,6 +17,31 @@ LUALIB_DLLEXPORT int luaLibGet_LUA_MASKCOUNT()
     return(LUA_MASKCOUNT);
 }
 
+LUALIB_DLLEXPORT int luaLibGet_LUA_MASKCALL()
+{
+    return(LUA_MASKCALL);
+}
+
+LUALIB_DLLEXPORT int luaLibGet_LUA_MASKRET()
+{
+    return(LUA_MASKRET);
+}
+
+LUALIB_DLLEXPORT int luaLibGet_LUA_HOOKCOUNT()
+{
+    return(LUA_HOOKCOUNT);
+}
+
+LUALIB_DLLEXPORT int luaLibGet_LUA_HOOKCALL()
+{
+    return(LUA_HOOKCALL);
+}
+
+LUALIB_DLLEXPORT int luaLibGet_LUA_HOOKRET()
+{
+    return(LUA_HOOKRET);
+}
+
 LUALIB_DLLEXPORT int luaLibGet_LUA_GLOBALSINDEX()
 {
     return(LUA_GLOBALSINDEX);
