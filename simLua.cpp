@@ -1,4 +1,4 @@
-#include "v_repLua.h"
+#include "simLua.h"
 
 extern "C" {
     #include "lua.h"

@@ -3,7 +3,7 @@ include(config.pri)
 QT -= core
 QT -= gui
 
-TARGET = v_repLua
+TARGET = simLua
 TEMPLATE = lib
 
 DEFINES -= UNICODE
@@ -37,15 +37,15 @@ LIBS += $$LUAJIT_LIBS
 INCLUDEPATH += $$LUAJIT_INCLUDEPATH
 
 win32 {
-    DEFINES += WIN_VREP
+    DEFINES += WIN_SIM
 }
 
 macx {
-    DEFINES += MAC_VREP
+    DEFINES += MAC_SIM
 }
 
 unix:!macx {
-    DEFINES += LIN_VREP
+    DEFINES += LIN_SIM
 }
 
 unix:!symbian {
@@ -58,8 +58,8 @@ unix:!symbian {
 }
 
 HEADERS += \
-    v_repLua.h \
+    simLua.h \
 
 SOURCES += \
-    v_repLua.cpp \
+    simLua.cpp \
 
