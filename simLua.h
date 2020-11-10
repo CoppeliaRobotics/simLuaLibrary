@@ -5,6 +5,7 @@
 typedef void luaWrap_lua_State;
 typedef void luaWrap_lua_Debug;
 typedef double luaWrap_lua_Number;
+typedef ptrdiff_t luaWrap_lua_Integer;
 typedef void (*luaWrap_lua_Hook) (luaWrap_lua_State* L,luaWrap_lua_Debug* ar);
 typedef int (*luaWrap_lua_CFunction) (luaWrap_lua_State* L);
 
@@ -31,7 +32,7 @@ LUALIB_DLLEXPORT void luaLib_lua_register(luaWrap_lua_State* L,const char* name,
 LUALIB_DLLEXPORT void luaLib_lua_pushnumber(luaWrap_lua_State* L,luaWrap_lua_Number n);
 LUALIB_DLLEXPORT void luaLib_lua_pushnil(luaWrap_lua_State* L);
 LUALIB_DLLEXPORT void luaLib_lua_pushboolean(luaWrap_lua_State* L,int b);
-LUALIB_DLLEXPORT void luaLib_lua_pushinteger(luaWrap_lua_State* L,int n);
+LUALIB_DLLEXPORT void luaLib_lua_pushinteger(luaWrap_lua_State* L,luaWrap_lua_Integer n);
 LUALIB_DLLEXPORT void luaLib_lua_pushstring(luaWrap_lua_State* L,const char* str);
 LUALIB_DLLEXPORT void luaLib_lua_pushlstring(luaWrap_lua_State* L,const char* str,size_t l);
 LUALIB_DLLEXPORT void luaLib_lua_pushcclosure(luaWrap_lua_State* L,luaWrap_lua_CFunction func,int n);

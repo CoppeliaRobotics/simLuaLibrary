@@ -87,7 +87,7 @@ LUALIB_DLLEXPORT void luaLib_lua_pushboolean(luaWrap_lua_State* L,int b)
     lua_pushboolean((lua_State*)L,b);
 }
 
-LUALIB_DLLEXPORT void luaLib_lua_pushinteger(luaWrap_lua_State* L,int n)
+LUALIB_DLLEXPORT void luaLib_lua_pushinteger(luaWrap_lua_State* L,luaWrap_lua_Integer n)
 {
     lua_pushinteger((lua_State*)L,n);
 }
