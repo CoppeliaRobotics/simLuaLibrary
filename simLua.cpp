@@ -42,10 +42,21 @@ LUALIB_DLLEXPORT int luaLibGet_LUA_HOOKRET()
     return(LUA_HOOKRET);
 }
 
+#ifdef OLD_LUA51
 LUALIB_DLLEXPORT int luaLibGet_LUA_GLOBALSINDEX()
 {
     return(LUA_GLOBALSINDEX);
 }
+#else
+LUALIB_DLLEXPORT int luaLibGet_LUA_REGISTRYINDEX()
+{
+    return(LUA_REGISTRYINDEX);
+}
+LUALIB_DLLEXPORT int luaWrapGet_LUA_RIDX_GLOBALS()
+{
+    return(LUA_RIDX_GLOBALS);
+}
+#endif
 
 LUALIB_DLLEXPORT luaWrap_lua_State* luaLib_luaL_newstate()
 {
@@ -62,9 +73,9 @@ LUALIB_DLLEXPORT void luaLib_luaL_openlibs(luaWrap_lua_State* L)
     luaL_openlibs((lua_State*)L);
 }
 
-LUALIB_DLLEXPORT int luaLib_lua_sethook(luaWrap_lua_State* L,luaWrap_lua_Hook func,int mask,int cnt)
+LUALIB_DLLEXPORT void luaLib_lua_sethook(luaWrap_lua_State* L,luaWrap_lua_Hook func,int mask,int cnt)
 {
-    return(lua_sethook((lua_State*)L,(lua_Hook)func,mask,cnt));
+    lua_sethook((lua_State*)L,(lua_Hook)func,mask,cnt);
 }
 
 LUALIB_DLLEXPORT void luaLib_lua_register(luaWrap_lua_State* L,const char* name,luaWrap_lua_CFunction func)
@@ -122,9 +133,9 @@ LUALIB_DLLEXPORT void luaLib_lua_createtable(luaWrap_lua_State* L,int narr, int 
     lua_createtable((lua_State*)L,narr,nrec);
 }
 
-LUALIB_DLLEXPORT int luaLib_lua_tointeger(luaWrap_lua_State* L,int idx)
+LUALIB_DLLEXPORT luaWrap_lua_Integer luaLib_lua_tointeger(luaWrap_lua_State* L,int idx)
 {
-    return((int)lua_tointeger((lua_State*)L,idx));
+    return(lua_tointeger((lua_State*)L,idx));
 }
 
 LUALIB_DLLEXPORT luaWrap_lua_Number luaLib_lua_tonumber(luaWrap_lua_State* L,int idx)
@@ -156,6 +167,13 @@ LUALIB_DLLEXPORT int luaLib_lua_isnumber(luaWrap_lua_State* L,int idx)
 {
     return(lua_isnumber((lua_State*)L,idx));
 }
+
+#ifndef OLD_LUA51
+LUALIB_DLLEXPORT int luaLib_lua_isinteger(luaWrap_lua_State* L,int idx)
+{
+    return(lua_isinteger((lua_State*)L,idx));
+}
+#endif
 
 LUALIB_DLLEXPORT int luaLib_lua_isstring(luaWrap_lua_State* L,int idx)
 {
@@ -237,9 +255,13 @@ LUALIB_DLLEXPORT void luaLib_lua_settop(luaWrap_lua_State* L,int idx)
     lua_settop((lua_State*)L,idx);
 }
 
-LUALIB_DLLEXPORT size_t luaLib_lua_objlen(luaWrap_lua_State* L,int idx)
+LUALIB_DLLEXPORT size_t luaLib_lua_rawlen(luaWrap_lua_State* L,int idx)
 {
+#ifdef OLD_LUA51
     return(lua_objlen((lua_State*)L,idx));
+#else
+    return(lua_rawlen((lua_State*)L,idx));
+#endif
 }
 
 LUALIB_DLLEXPORT void luaLib_lua_rawgeti(luaWrap_lua_State* L,int idx,int n)

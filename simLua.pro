@@ -1,5 +1,11 @@
 include(config.pri)
 
+#DEFINES += OLD_LUA51
+#LIBS += $$LUAJIT_LIBS #Luajit not supported with Lua > Lua5.2
+#INCLUDEPATH += $$LUAJIT_INCLUDEPATH #Luajit not supported with Lua > Lua5.2
+LIBS += $$LUA_LIBS
+INCLUDEPATH += $$LUA_INCLUDEPATH
+
 QT -= core
 QT -= gui
 
@@ -32,9 +38,6 @@ CONFIG += shared
     QMAKE_CFLAGS += -Wno-unused-but-set-variable
     QMAKE_CFLAGS += -Wno-unused-local-typedefs
 }
-
-LIBS += $$LUAJIT_LIBS
-INCLUDEPATH += $$LUAJIT_INCLUDEPATH
 
 win32 {
     DEFINES += WIN_SIM
