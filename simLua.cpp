@@ -1,12 +1,5 @@
 #include "simLua.h"
 
-extern "C" {
-    #include "lua.h"
-    #include "lauxlib.h"
-    #include "lualib.h"
-}
-
-
 LUALIB_DLLEXPORT int luaLibGet_LUA_MULTRET()
 {
     return(LUA_MULTRET);

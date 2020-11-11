@@ -2,10 +2,16 @@
 
 #include <cstring>
 
+extern "C" {
+    #include "lua.h"
+    #include "lauxlib.h"
+    #include "lualib.h"
+}
+
 typedef void luaWrap_lua_State;
 typedef void luaWrap_lua_Debug;
-typedef double luaWrap_lua_Number;
-typedef ptrdiff_t luaWrap_lua_Integer;
+typedef lua_Number luaWrap_lua_Number;
+typedef lua_Integer luaWrap_lua_Integer;
 typedef void (*luaWrap_lua_Hook) (luaWrap_lua_State* L,luaWrap_lua_Debug* ar);
 typedef int (*luaWrap_lua_CFunction) (luaWrap_lua_State* L);
 
